@@ -158,11 +158,11 @@
     self.moveFactor = CGPointMake((self.handle.center.x - self.defaultPoint.x)/(self.bounds.size.width/2),
                                   (self.handle.center.y - self.defaultPoint.y)/(self.bounds.size.height/2));
         
-    if (!(self.lastMoveFactor.x == self.moveFactor.x &&
-          self.lastMoveFactor.y == self.moveFactor.y &&
-          self.moveFactor.x == 0 && self.moveFactor.y == 0))
+    if (self.isTouching)
     {
-            [self.delegate joystick:self didUpdate:self.moveFactor];
+        CGPoint degreeOfPosition = CGPointMake((self.handle.frame.origin.x/self.handle.frame.size.width-.55)*2,
+                                               (self.handle.frame.origin.y/self.handle.frame.size.height-.55)*2);
+        [self.delegate joystick:self didUpdate:degreeOfPosition];
     }
     
     self.lastMoveFactor = self.moveFactor;
