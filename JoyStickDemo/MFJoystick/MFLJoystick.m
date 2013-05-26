@@ -106,6 +106,7 @@
     [UIView animateWithDuration:.4 animations:^{
         self.alpha = 0.1;
     }];
+    [self.delegate joystick:self didUpdate:CGPointZero];
     self.isTouching = FALSE;
 }
 
