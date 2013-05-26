@@ -14,7 +14,6 @@
 
 @property CGFloat moveViscosity;
 @property CGFloat smallestPossible;
-@property CGFloat updateInterval;
 @property CGPoint defaultPoint;
 
 @property UIImageView *bgImageView;

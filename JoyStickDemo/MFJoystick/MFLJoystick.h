@@ -12,6 +12,7 @@
 @protocol JoystickDelegate;
 @interface MFLJoystick : UIView
 
+@property CGFloat updateInterval;
 @property (weak) id<JoystickDelegate> delegate;
 
 - (void)setMovementUpdateInterval:(CGFloat)interval;
