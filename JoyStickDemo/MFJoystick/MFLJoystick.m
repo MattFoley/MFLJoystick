@@ -15,10 +15,7 @@
 @property CGFloat moveViscosity;
 @property CGFloat smallestPossible;
 @property CGFloat updateInterval;
-
 @property CGPoint defaultPoint;
-@property CGPoint lastMoveFactor;
-@property CGPoint moveFactor;
 
 @property UIImageView *bgImageView;
 @property UIImageView *thumbImageView;
@@ -53,9 +50,6 @@
 {
     _moveViscosity = 4;
     _smallestPossible = 0.09;
-    _moveFactor.x = 0;
-    _moveFactor.y = 0;
-    _lastMoveFactor = _moveFactor;
     _updateInterval = 1.0/45;
 }
 
@@ -154,9 +148,6 @@
         self.handle.center = CGPointMake(newX, newY);
         self.thumbImageView.center = self.handle.center;
     }
-    
-    self.moveFactor = CGPointMake((self.handle.center.x - self.defaultPoint.x)/(self.bounds.size.width/2),
-                                  (self.handle.center.y - self.defaultPoint.y)/(self.bounds.size.height/2));
         
     if (self.isTouching)
     {
@@ -164,9 +155,7 @@
                                                (self.handle.frame.origin.y/self.handle.frame.size.height-.55)*2);
         [self.delegate joystick:self didUpdate:degreeOfPosition];
     }
-    
-    self.lastMoveFactor = self.moveFactor;
-    
+
     [self performSelector:@selector(animate) withObject:nil afterDelay:self.updateInterval];
 }
 
