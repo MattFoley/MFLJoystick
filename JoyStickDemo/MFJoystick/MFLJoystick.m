@@ -40,6 +40,7 @@
         
         [self makeHandle];
         [self animate];
+        [self notifyDelegate];
     }
     
     return self;
@@ -148,15 +149,20 @@
         self.handle.center = CGPointMake(newX, newY);
         self.thumbImageView.center = self.handle.center;
     }
-        
+    [self performSelector:@selector(animate) withObject:nil afterDelay:1/45];
+}
+
+- (void)notifyDelegate
+{
     if (self.isTouching)
     {
         CGPoint degreeOfPosition = CGPointMake((self.handle.frame.origin.x/self.handle.frame.size.width-.55)*2,
                                                (self.handle.frame.origin.y/self.handle.frame.size.height-.55)*2);
         [self.delegate joystick:self didUpdate:degreeOfPosition];
     }
+    
+    [self performSelector:@selector(notifyDelegate) withObject:nil afterDelay:self.updateInterval];
 
-    [self performSelector:@selector(animate) withObject:nil afterDelay:self.updateInterval];
 }
 
 - (void)setMovementUpdateInterval:(CGFloat)interval
