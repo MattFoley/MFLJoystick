@@ -28,22 +28,44 @@
 {
     self = [super initWithFrame:frame];
     
-    if (self)
-    {
-        [self setDefaultValues];
-        [self roundView:self toDiameter:self.bounds.size.width];
-        
-        _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width,
-                                                                     self.bounds.size.height)];
-        [self roundView:_bgImageView toDiameter:_bgImageView.bounds.size.width];
-        [self addSubview:_bgImageView];
-        
-        [self makeHandle];
-        [self animate];
-        [self notifyDelegate];
+    if (self) {
+        [self sharedInit];
     }
     
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+
+    if (self) {
+        [self sharedInit];
+    }
+
+    return self;
+}
+
+- (void)sharedInit
+{
+    [self setDefaultValues];
+    [self roundView:self toDiameter:self.bounds.size.width];
+
+    _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width,
+                                                                 self.bounds.size.height)];
+    [self roundView:_bgImageView toDiameter:_bgImageView.bounds.size.width];
+    [self addSubview:_bgImageView];
+
+    [self makeHandle];
+    [self animate];
+    [self notifyDelegate];
+}
+
+- (void)didMoveToSuperview
+{
+    if (!self.superview) {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(notifyDelegate) object:nil];
+    }
 }
 
 - (void)setDefaultValues
@@ -200,7 +222,9 @@ CGFloat DistanceBetweenTwoPoints(CGPoint point1,CGPoint point2)
 {
     CGFloat dx = point2.x - point1.x;
     CGFloat dy = point2.y - point1.y;
-    return sqrt(dx*dx + dy*dy );
+    CGFloat distance = sqrt(dx*dx + dy*dy);
+
+    return sqrt(dx*dx + dy*dy);
 };
 
 @end

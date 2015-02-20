@@ -9,10 +9,18 @@
 
 #import "ViewController.h"
 #import "MFLJoystick.h"
-@interface ViewController () <JoystickDelegate>
+#import "JoystickDemo-Swift.h"
 
-@property (weak) IBOutlet UIView *player;
-@property CGPoint playerOrigin;
+@interface ViewController () <JoystickDelegate, MFLSwiftJoystickDelegate>
+
+@property (weak) IBOutlet UIView *playerObjC;
+@property (weak) IBOutlet UIView *playerSwift;
+
+@property (weak) IBOutlet MFLJoystick *objcJoystick;
+@property (weak) IBOutlet MFLSwiftJoystickImplementation *swiftJoystick;
+
+@property CGPoint playerObjCOrigin;
+@property CGPoint playerSwiftOrigin;
 
 @end
 
@@ -21,15 +29,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.playerOrigin = self.player.frame.origin;
-    
-    MFLJoystick *joystick = [[MFLJoystick alloc] initWithFrame:CGRectMake(40, 90, 128, 128)];
-    [joystick setThumbImage:[UIImage imageNamed:@"joy_thumb.png"]
-                 andBGImage:[UIImage imageNamed:@"stick_base.png"]];
-    [joystick setDelegate:self];
-    [self.view addSubview:joystick];
-    
-    
+    self.playerObjCOrigin = self.playerObjC.frame.origin;
+        self.playerSwiftOrigin = self.playerSwift.frame.origin;
+
+    [self.objcJoystick setThumbImage:[UIImage imageNamed:@"joy_thumb.png"]
+                          andBGImage:[UIImage imageNamed:@"stick_base.png"]];
+
+    [self.swiftJoystick setupWithThumbAndBackgroundImages:[UIImage imageNamed:@"joy_thumb.png"]
+                                                  bgImage:[UIImage imageNamed:@"stick_base.png"]];
+    [self.swiftJoystick setDelegate:self];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,13 +50,22 @@
 
 - (void)joystick:(MFLJoystick *)aJoystick didUpdate:(CGPoint)dir
 {
-    NSLog(@"%@", NSStringFromCGPoint(dir));
-    CGPoint newpos = self.playerOrigin;
-    newpos.x = 30.0 * dir.x + self.playerOrigin.x;
-    newpos.y = 30.0 * dir.y + self.playerOrigin.y;
-    CGRect fr = self.player.frame;
+    CGPoint newpos = self.playerObjCOrigin;
+    newpos.x = 30.0 * dir.x + newpos.x;
+    newpos.y = 30.0 * dir.y + newpos.y;
+    CGRect fr = self.playerObjC.frame;
     fr.origin = newpos;
-    self.player.frame = fr;
+    self.playerObjC.frame = fr;
+}
+
+- (void)joyStickDidUpdate:(CGPoint)movement
+{
+    CGPoint newpos = self.playerSwiftOrigin;
+    newpos.x = 30.0 * movement.x + newpos.x;
+    newpos.y = 30.0 * movement.y + newpos.y;
+    CGRect fr = self.playerSwift.frame;
+    fr.origin = newpos;
+    self.playerSwift.frame = fr;
 }
 
 @end

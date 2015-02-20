@@ -13,7 +13,7 @@
 @interface MFLJoystick : UIView
 
 @property CGFloat updateInterval;
-@property (weak) id<JoystickDelegate> delegate;
+@property (weak) IBOutlet id<JoystickDelegate> delegate;
 
 - (void)setMovementUpdateInterval:(CGFloat)interval;
 - (void)setThumbImage:(UIImage *)thumbImage andBGImage:(UIImage *)bgImage;

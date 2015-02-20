@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37342C6E174EFAA4009DA961 /* MFLJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 37342C6B174EFAA4009DA961 /* MFLJoystick.m */; };
-		37AD3F24174F0DC0002BF733 /* joy_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 37AD3F22174F0DC0002BF733 /* joy_thumb.png */; };
-		37AD3F25174F0DC0002BF733 /* joy_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37AD3F23174F0DC0002BF733 /* joy_thumb@2x.png */; };
-		37AD3F27174F182E002BF733 /* stick_base.png in Resources */ = {isa = PBXBuildFile; fileRef = 37AD3F26174F182E002BF733 /* stick_base.png */; };
+		6B10FBEC1A96B65F000D1FA3 /* joy_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B10FBE51A96B65F000D1FA3 /* joy_thumb.png */; };
+		6B10FBED1A96B65F000D1FA3 /* joy_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B10FBE61A96B65F000D1FA3 /* joy_thumb@2x.png */; };
+		6B10FBEE1A96B65F000D1FA3 /* stick_base.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B10FBE71A96B65F000D1FA3 /* stick_base.png */; };
+		6B10FBEF1A96B65F000D1FA3 /* MFLJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B10FBEA1A96B65F000D1FA3 /* MFLJoystick.m */; };
+		6B10FBF21A96B672000D1FA3 /* MFLSwiftJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B10FBF11A96B672000D1FA3 /* MFLSwiftJoystick.swift */; };
 		FE916AE3172AC49B00E60FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE916AE2172AC49B00E60FA8 /* UIKit.framework */; };
 		FE916AE5172AC49B00E60FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE916AE4172AC49B00E60FA8 /* Foundation.framework */; };
 		FE916AE7172AC49B00E60FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE916AE6172AC49B00E60FA8 /* CoreGraphics.framework */; };
@@ -25,11 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37342C6A174EFAA4009DA961 /* MFLJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFLJoystick.h; sourceTree = "<group>"; };
-		37342C6B174EFAA4009DA961 /* MFLJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFLJoystick.m; sourceTree = "<group>"; };
-		37AD3F22174F0DC0002BF733 /* joy_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joy_thumb.png; sourceTree = "<group>"; };
-		37AD3F23174F0DC0002BF733 /* joy_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joy_thumb@2x.png"; sourceTree = "<group>"; };
-		37AD3F26174F182E002BF733 /* stick_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_base.png; sourceTree = "<group>"; };
+		6B10FBE51A96B65F000D1FA3 /* joy_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joy_thumb.png; sourceTree = "<group>"; };
+		6B10FBE61A96B65F000D1FA3 /* joy_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joy_thumb@2x.png"; sourceTree = "<group>"; };
+		6B10FBE71A96B65F000D1FA3 /* stick_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_base.png; sourceTree = "<group>"; };
+		6B10FBE91A96B65F000D1FA3 /* MFLJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFLJoystick.h; sourceTree = "<group>"; };
+		6B10FBEA1A96B65F000D1FA3 /* MFLJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFLJoystick.m; sourceTree = "<group>"; };
+		6B10FBF11A96B672000D1FA3 /* MFLSwiftJoystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFLSwiftJoystick.swift; sourceTree = "<group>"; };
 		FE916ADE172AC49B00E60FA8 /* JoyStickDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoyStickDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE916AE2172AC49B00E60FA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FE916AE4172AC49B00E60FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,16 +64,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37342C68174EFA66009DA961 /* MFJoystick */ = {
+		6B10FBE31A96B65F000D1FA3 /* MFLJoystick */ = {
 			isa = PBXGroup;
 			children = (
-				37342C6A174EFAA4009DA961 /* MFLJoystick.h */,
-				37342C6B174EFAA4009DA961 /* MFLJoystick.m */,
-				37AD3F26174F182E002BF733 /* stick_base.png */,
-				37AD3F22174F0DC0002BF733 /* joy_thumb.png */,
-				37AD3F23174F0DC0002BF733 /* joy_thumb@2x.png */,
+				6B10FBE41A96B65F000D1FA3 /* Images */,
+				6B10FBE81A96B65F000D1FA3 /* ObjC */,
+				6B10FBEB1A96B65F000D1FA3 /* Swift */,
 			);
-			path = MFJoystick;
+			path = MFLJoystick;
+			sourceTree = "<group>";
+		};
+		6B10FBE41A96B65F000D1FA3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6B10FBE51A96B65F000D1FA3 /* joy_thumb.png */,
+				6B10FBE61A96B65F000D1FA3 /* joy_thumb@2x.png */,
+				6B10FBE71A96B65F000D1FA3 /* stick_base.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		6B10FBE81A96B65F000D1FA3 /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				6B10FBE91A96B65F000D1FA3 /* MFLJoystick.h */,
+				6B10FBEA1A96B65F000D1FA3 /* MFLJoystick.m */,
+			);
+			path = ObjC;
+			sourceTree = "<group>";
+		};
+		6B10FBEB1A96B65F000D1FA3 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				6B10FBF11A96B672000D1FA3 /* MFLSwiftJoystick.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 		FE916AD3172AC49B00E60FA8 = {
@@ -104,7 +131,7 @@
 		FE916AE8172AC49B00E60FA8 /* JoyStickDemo */ = {
 			isa = PBXGroup;
 			children = (
-				37342C68174EFA66009DA961 /* MFJoystick */,
+				6B10FBE31A96B65F000D1FA3 /* MFLJoystick */,
 				FE916AF1172AC49B00E60FA8 /* AppDelegate.h */,
 				FE916AF2172AC49B00E60FA8 /* AppDelegate.m */,
 				FE916AFA172AC49C00E60FA8 /* ViewController.h */,
@@ -182,12 +209,12 @@
 			files = (
 				FE916AED172AC49B00E60FA8 /* InfoPlist.strings in Resources */,
 				FE916AF5172AC49B00E60FA8 /* Default.png in Resources */,
+				6B10FBEC1A96B65F000D1FA3 /* joy_thumb.png in Resources */,
 				FE916AF7172AC49B00E60FA8 /* Default@2x.png in Resources */,
 				FE916AF9172AC49C00E60FA8 /* Default-568h@2x.png in Resources */,
 				FE916AFF172AC49C00E60FA8 /* ViewController_iPhone.xib in Resources */,
-				37AD3F24174F0DC0002BF733 /* joy_thumb.png in Resources */,
-				37AD3F25174F0DC0002BF733 /* joy_thumb@2x.png in Resources */,
-				37AD3F27174F182E002BF733 /* stick_base.png in Resources */,
+				6B10FBED1A96B65F000D1FA3 /* joy_thumb@2x.png in Resources */,
+				6B10FBEE1A96B65F000D1FA3 /* stick_base.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +227,9 @@
 			files = (
 				FE916AEF172AC49B00E60FA8 /* main.m in Sources */,
 				FE916AF3172AC49B00E60FA8 /* AppDelegate.m in Sources */,
+				6B10FBEF1A96B65F000D1FA3 /* MFLJoystick.m in Sources */,
+				6B10FBF21A96B672000D1FA3 /* MFLSwiftJoystick.swift in Sources */,
 				FE916AFC172AC49C00E60FA8 /* ViewController.m in Sources */,
-				37342C6E174EFAA4009DA961 /* MFLJoystick.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +308,15 @@
 		FE916B06172AC49C00E60FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JoyStickDemo/JoyStickDemo-Prefix.pch";
 				INFOPLIST_FILE = "JoyStickDemo/JoyStickDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -292,10 +324,13 @@
 		FE916B07172AC49C00E60FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JoyStickDemo/JoyStickDemo-Prefix.pch";
 				INFOPLIST_FILE = "JoyStickDemo/JoyStickDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
