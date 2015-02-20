@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-
-/*
-*       Accessible Methods
-*/
-
 @objc public protocol MFLSwiftJoystickDelegate
 {
     func joyStickDidUpdate(movement:CGPoint)
