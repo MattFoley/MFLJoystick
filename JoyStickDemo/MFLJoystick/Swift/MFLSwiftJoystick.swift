@@ -192,7 +192,6 @@ import UIKit
         let dx = point2.x - point1.x
         let dy = point2.y - point1.y
         let distance = sqrt((dx * dx) + (dy * dy));
-        NSLog("distanceBetweenSwift %f", distance);
         return distance;
     }
     
