@@ -77,15 +77,15 @@ import UIKit
         self.addSubview(self.thumbImageView)
     }
 
-    public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         UIView.animateWithDuration(0.2) { () -> Void in
             self.alpha = 1;
         }
         self.touchesMoved(touches, withEvent: event)
     }
 
-    public override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        if let myTouch: UITouch = touches.allObjects.first as? UITouch {
+    public override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if let myTouch: UITouch = touches.first as? UITouch {
             var currentPos = myTouch.locationInView(self)
 
             let selfCenter = CGPointMake((bounds.origin.x + bounds.size.width/2),
@@ -110,7 +110,7 @@ import UIKit
         }
     }
 
-    public override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    public override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         UIView.animateWithDuration(0.4) { () -> Void in
             self.alpha = 0.1;
         }
