@@ -20,7 +20,7 @@ class ViewController: UIViewController, MFLSwiftJoystickDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        balls = NSMutableArray();
+        var balls = [UIView]();
 
         animator = UIDynamicAnimator(referenceView:self.view);
 
