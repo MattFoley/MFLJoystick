@@ -102,6 +102,12 @@ import UIKit
         thumbImageView = UIImageView(frame:handle.frame)
         self.addSubview(self.thumbImageView)
     }
+    
+    public var relativePoint : CGPoint {
+        get {
+            return CGPoint(x: (handle.center.x / bgImageView.bounds.width), y: (thumbImageView.center.y / bgImageView.bounds.height))
+        }
+    }
 
     public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         UIView.animateWithDuration(0.2) { () -> Void in
