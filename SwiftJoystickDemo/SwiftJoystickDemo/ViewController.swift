@@ -34,8 +34,6 @@ class ViewController: UIViewController, MFLSwiftJoystickDelegate {
 
         joystickPush = UIPushBehavior(items:balls, mode:UIPushBehaviorMode.Continuous)
         animator?.addBehavior(joystickPush)
-
-        joystick?.setupWithThumbAndBackgroundImages(UIImage(named:"joy_thumb.png")!, bgImage: UIImage(named:"stick_base.png")!);
         joystick?.delegate = self
     }
 
