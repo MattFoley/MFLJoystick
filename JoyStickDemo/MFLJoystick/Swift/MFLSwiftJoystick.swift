@@ -14,6 +14,7 @@ import UIKit
     func joyStickDidUpdate(movement:CGPoint)
 }
 
+@IBDesignable
 @objc public class MFLSwiftJoystickImplementation : UIView
 {
     /*
@@ -45,10 +46,30 @@ import UIKit
         moveViscosity = viscosity
         smallestPossible = minimum
     }
+    
+    @IBInspectable var thumbImage : UIImage? {
+        didSet {
+            thumbImageView.image = thumbImage
+        }
+    }
+    
+    @IBInspectable var baseImage : UIImage? {
+        didSet {
+            bgImageView.image = baseImage
+        }
+    }
 
     public func setupWithThumbAndBackgroundImages(thumbImage: UIImage, bgImage: UIImage) {
         thumbImageView.image = thumbImage;
         bgImageView.image = bgImage;
+    }
+    
+    public override func layoutSubviews() {
+        bgImageView.frame = self.bounds
+        #if TARGET_INTERFACE_BUILDER
+            thumbImageView.center = bgImageView.center
+        #endif
+        super.layoutSubviews()
     }
 
     func sharedInit() {
@@ -60,8 +81,13 @@ import UIKit
 
 
         makeHandle()
-        animate()
-        notifyDelegate()
+        #if !TARGET_INTERFACE_BUILDER
+            animate()
+            notifyDelegate()
+        #endif
+        
+        thumbImageView.image = thumbImage
+        bgImageView.image = baseImage
     }
 
     func makeHandle() {
@@ -75,6 +101,12 @@ import UIKit
 
         thumbImageView = UIImageView(frame:handle.frame)
         self.addSubview(self.thumbImageView)
+    }
+    
+    public var relativePoint : CGPoint {
+        get {
+            return CGPoint(x: (handle.center.x / bgImageView.bounds.width), y: (thumbImageView.center.y / bgImageView.bounds.height))
+        }
     }
 
     public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
